@@ -1,9 +1,5 @@
 <div class="container">
   <ul class="list-group">
-    <li class="list-group-item" *ngFor="let todo of todos | async">
-      {{ todo.task }}
-      <span class="badge badge-success" *ngIf="todo.isCompleted">Completed</span>
-      <span class="badge badge-info" *ngIf="!todo.isCompleted">Not Completed</span>
-    </li>
+    <app-todo-list-item *ngFor="let todo of todos | async" [todo]="todo"></app-todo-list-item>
   </ul>
 </div>

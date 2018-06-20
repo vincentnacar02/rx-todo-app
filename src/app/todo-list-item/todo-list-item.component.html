@@ -1,0 +1,6 @@
+<li class="list-group-item">
+  {{ todo.task }}
+  <span class="badge badge-success" *ngIf="todo.isCompleted">Completed</span>
+  <span class="badge badge-info" *ngIf="!todo.isCompleted">Not Completed</span>
+  <button type="button" class="btn btn-primary btn-sm" *ngIf="!todo.isCompleted" (click)="markCompleted()">Mark as Completed</button>
+</li>
