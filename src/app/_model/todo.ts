@@ -1,4 +1,5 @@
 export interface Todo {
     task: string,
-    isCompleted: boolean
+    isCompleted: boolean,
+    isArchive: boolean
 }

@@ -23,4 +23,16 @@ export class TodoListComponent implements OnInit {
     });
   }
 
+  getOpenItems() {
+    return this.todos.map(items => 
+      items.filter(item => item.isArchive == false)
+    );
+  }
+
+  getArchiveItems() {
+    return this.todos.map(items => 
+      items.filter(item => item.isArchive == true)
+    );
+  }
+
 }

@@ -19,4 +19,8 @@ export class TodoListItemComponent implements OnInit {
     this.todo.isCompleted = true;
   }
 
+  archive() {
+    this.todo.isArchive = true;
+  }
+
 }

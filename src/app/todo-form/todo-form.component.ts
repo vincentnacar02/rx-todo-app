@@ -20,7 +20,7 @@ export class TodoFormComponent implements OnInit {
   }
 
   clear() {
-    this.todo = { task: '', isCompleted: false };
+    this.todo = { task: '', isCompleted: false, isArchive: false };
   }
 
   onSave() {
