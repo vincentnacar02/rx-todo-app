@@ -1,5 +1,9 @@
 <div class="container">
 
+  <div class="row">
+    <input type="text" class="form-control" placeholder="Search" name="search" [(ngModel)]="search" (ngModelChange)="onSearch()">
+  </div>
+
   <b *ngIf="(getOpenItems() | async).length > 0">Open Items
     <span class="badge badge-success badge-pill">{{(getOpenItems() | async).length}}</span>
   </b>

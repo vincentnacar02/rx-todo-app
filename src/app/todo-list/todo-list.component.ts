@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class TodoListComponent implements OnInit {
 
+  search: string;
   todos: Observable<Todo[]>;
 
   constructor(
@@ -17,7 +18,17 @@ export class TodoListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.todos = this.todoService.onUpdate();
+    this.onSearch();
+  }
+
+  onSearch() {
+    if (this.search) {
+      this.todos = this.todos.map(
+        items => items.filter(item => item.task.includes(this.search))
+      );
+    } else {
+      this.todos = this.todoService.onUpdate();
+    }
     this.todos.subscribe(items => {
       console.log(items);
     });
